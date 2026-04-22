@@ -168,8 +168,8 @@ client.on('message', async (msg) => {
     // 1. Ubah status menjadi "Dibaca" (Centang Biru) seolah-olah manusia membuka chat
     await chat.sendSeen();
 
-    // 2. Jeda waktu sejenak (1.5 hingga 3 detik) seolah-olah sedang membaca pesan konsumen
-    const readDelay = Math.floor(Math.random() * 1500) + 1500;
+    // 2. Jeda waktu sejenak (5 hingga 10 detik) seolah-olah sedang membaca pesan konsumen
+    const readDelay = Math.floor(Math.random() * 5000) + 5000;
     await new Promise(resolve => setTimeout(resolve, readDelay));
 
     // 3. Setelah selesai membaca, munculkan indikator "sedang mengetik..."
@@ -202,8 +202,8 @@ client.on('message', async (msg) => {
             // Simulasi jeda ngetik manusia berdasar pada kepanjangan karakter balasan.
             // Asumsikan kira-kira baca 70 karakter per detiknya.
             const calculatedDelay = (replyText.length / 70) * 1000;
-            // Kita batasi paling sedikit 2 detik (2000 ms), dan paling lama 12 detik (12000 ms) agar user tidak jenuh menunggu
-            const typingDelay = Math.min(Math.max(calculatedDelay, 2000), 12000);
+            // Kita batasi paling sedikit 5 detik (5000 ms), dan paling lama 20 detik (20000 ms) agar user tidak jenuh menunggu tapi tetap natural
+            const typingDelay = Math.min(Math.max(calculatedDelay, 5000), 20000);
             
             await new Promise(resolve => setTimeout(resolve, typingDelay));
 

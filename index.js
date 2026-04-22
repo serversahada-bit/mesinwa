@@ -23,8 +23,10 @@ const axios = require('axios');
 // ============================================================
 // KONFIGURASI
 // ============================================================
-const FLASK_API_URL = 'http://127.0.0.1:5000/api/wa-webhook';
-const FLASK_STATUS_URL = 'http://127.0.0.1:5000/api/bot-status';
+const FLASK_BASE_URL = process.env.FLASK_BASE_URL || 'https://y1.ptslu.id';
+const FLASK_API_URL = `${FLASK_BASE_URL}/api/wa-webhook`;
+const FLASK_STATUS_URL = `${FLASK_BASE_URL}/api/bot-status`;
+
 
 // Helper utk sync status ke Flask
 async function syncStatus(status, qrStr = '') {

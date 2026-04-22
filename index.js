@@ -23,7 +23,7 @@ const axios = require('axios');
 // ============================================================
 // KONFIGURASI
 // ============================================================
-const FLASK_BASE_URL = process.env.FLASK_BASE_URL || 'https://y2.ptslu.id';
+const FLASK_BASE_URL = process.env.FLASK_BASE_URL || 'https://y1.ptslu.id';
 const FLASK_API_URL = `${FLASK_BASE_URL}/api/wa-webhook`;
 const FLASK_STATUS_URL = `${FLASK_BASE_URL}/api/bot-status`;
 

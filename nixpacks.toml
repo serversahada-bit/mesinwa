@@ -1,0 +1,11 @@
+[providers.node]
+node_version = "18"
+
+[phases.setup]
+nixPkgs = ["...", "chromium", "nss", "freetype", "harfbuzz", "pango", "xorg.libX11", "xorg.libXcomposite", "xorg.libXdamage", "xorg.libXext", "xorg.libXfixes", "xorg.libXrandr", "xorg.libxcb", "alsa-lib", "mesa", "cairo"]
+
+[phases.build]
+cmds = ["npm install"]
+
+[start]
+cmd = "node index.js"
